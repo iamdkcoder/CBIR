@@ -1,4 +1,11 @@
-
+static/*
+!static/DenseEffNetFeatures
+!static/EfficientNetFeatures 
+!static/DenseNetFeatures     
+!static/MobileNetFeatures    
+!static/image
+!static/uploaded
+!.gitkeep
 .idea
 
 
@@ -92,11 +99,3 @@ ENV/
 # Rope project settings
 .ropeproject
 
-static/*
-!static/DenseEffNetFeatures
-!static/EfficientNetFeatures 
-!static/DenseNetFeatures     
-!static/MobileNetFeatures    
-!static/image
-!static/uploaded
-!.gitkeep
