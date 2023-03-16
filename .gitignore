@@ -1,5 +1,8 @@
 static/*
-!static/DenseEffNetfeature
+!static/DenseEffNetfeatures
+!static/DenseNetFeatures
+!static/EfficientNetFeatures
+!static/MobileNetFeatures
 !static/image
 !static/uploaded
 !.gitkeep
