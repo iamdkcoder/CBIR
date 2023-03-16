@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>DenseNet_EfficientNet</title>
+</head>
+
+<body style="text-align: center;">
+
+    <div class="container">
+        <h1 style="text-align: center;">Content Based Image Retrieval</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="query_img" style="margin-left: 500px;"><br>
+            <span>Please select</span>
+            <select name="feature_select">
+                <option value="DenseNet">DenseNet</option>
+                <option value="EfficientNet">EfficientNet</option>
+                <option value="MobileNet">MobileNet</option>
+                <option value="DenseEffNet">DenseEffNet</option>
+            </select>
+
+            <label for="scope">Define Scope</label>
+            <input type="number" id="scope" name="scope">
+            <input type="submit">
+
+        </form>
+        <h2 style="text-align: center;">Query:</h2>
+        {% if query_path %}
+        <img src="{{ query_path }}" width="250px" style="margin-left: 15px;">
+        <span style="font: size 30px;"><b>Recall = {{recall}}</b></span>
+        <span style="font: size 30px;"><b> Precision = {{precision}}</b></span>
+        {% endif %}
+
+        <h2>Results:</h2>
+        {% for score in scores %}
+        <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+            <img src="{{ score[1] }}" height="200px">
+            <figcaption>{{ score[0] }}</figcaption>
+            <span>{{score[1].stem}}</span>
+
+
+        </figure>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
