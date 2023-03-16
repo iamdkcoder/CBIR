@@ -1,5 +1,8 @@
 static/*
-
+!static/DenseEffNetfeature
+!static/image
+!static/uploaded
+!.gitkeep
 .idea
 
 
