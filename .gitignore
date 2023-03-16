@@ -1,11 +1,5 @@
 static/*
-!static/DenseEffNetFeatures
-!static/EfficientNetFeatures 
-!static/DenseNetFeatures     
-!static/MobileNetFeatures    
-!static/image
-!static/uploaded
-!.gitkeep
+
 .idea
 
 
