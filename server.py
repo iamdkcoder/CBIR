@@ -7,7 +7,7 @@ from datetime import datetime
 from flask import Flask, request, render_template
 from pathlib import Path
 from io import FileIO
-
+from time import time
 
 app = Flask(__name__)
 
@@ -41,6 +41,7 @@ MobiDF = np.array(MobiDF)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        start = time()
         file = request.files['query_img']
         scope = request.form.get('scope')
         FeatureModel = request.form.get('feature_select')
@@ -81,8 +82,9 @@ def index():
         c=name_path.count(inp) 
         recall = c/200
         precision=c/scope
+        speed = time()-start
         return render_template('index.html',
-                               query_path=uploaded_img_path,
+                               query_path=uploaded_img_path,speed=speed,
                                scores=scores,precision=precision,recall=recall)
     else:
         return render_template('index.html')

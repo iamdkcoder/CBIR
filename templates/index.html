@@ -1,48 +1,388 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <title>DenseNet_EfficientNet</title>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>Deep Learners</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" href="static/css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" href="static/css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="static/css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" href="static/images/fevicon.png" type="image/gif" />
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
+<!-- body -->
+<div class="context">
+   <!-- <h1>Pure Css Animated Background</h1> -->
+</div>
 
-<body style="text-align: center;">
 
-    <div class="container">
-        <h1 style="text-align: center;">Content Based Image Retrieval</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="file" name="query_img" style="margin-left: 500px;"><br>
-            <span>Please select</span>
-            <select name="feature_select">
-                <option value="DenseNet">DenseNet</option>
-                <option value="EfficientNet">EfficientNet</option>
-                <option value="MobileNet">MobileNet</option>
-                <option value="DenseEffNet">DenseEffNet</option>
-            </select>
+<body class="main-layout">
 
+   <div class="loader_bg">
+      <div class="loader"><img src="static/images/loading.gif" alt="#" /></div>
+   </div>
+   <!-- end loader -->
+   <!-- header -->
+
+   <div class="header">
+      <div class="container">
+         <div class="row d_flex">
+            <div class=" col-md-2 col-sm-3 col logo_section">
+               <div class="full">
+                  <div class="center-desk">
+                     <div class="logo">
+                        <a href="index.html"><img src="static/images/logo1.png" alt="#" width="118" height="118" /></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+               <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+                     aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div> <!-- end header inner -->
+   <!-- top -->
+
+   <div class="full_bg">
+      <div class="slider_main">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <!-- carousel code -->
+                  <div id="banner1" class="carousel slide">
+                     <ol class="carousel-indicators">
+                        <li data-target="#banner1" data-slide-to="0" class="active"></li>
+                        <li data-target="#banner1" data-slide-to="1"></li>
+                        <li data-target="#banner1" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <!-- first slide -->
+                        <div class="carousel-item active">
+                           <div class="carousel-caption relative">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <div class="dream">
+                                       <br>
+                                       <br>
+                                       <h1 style="font-size: 67px;">
+                                          Content<br>based<br>image<br>retrival
+                                       </h1>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="dream_img">
+                                       <figure><img src="static/images/img4.png" alt="#"
+                                             style="height: 556px; width:554px; border-radius:157px" />
+                                       </figure>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="area"></div>
+
+
+      <ul class="circles">
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+      </ul>
+   </div>
+   <div class="guarantee">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-3 col-md-6">
+               <div id="ho_co" class="guarantee-box_main">
+                  <div class="guarantee-box text_align_center">
+                     <i>
+                        <img src="static\images\Denseef1.png" alt="Alternative Text" height="90" width="80"
+                           class="image2">
+                     </i>
+                     <h3>DenseEffnet</h3>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+               <div id="ho_co" class="guarantee-box_main">
+                  <div class="guarantee-box text_align_center">
+                     <i>
+                        <img src="static\images\start1.png" alt="Alternative Text" height="70" width="130"
+                           class="image1">
+                     </i>
+                     <h3>Efficientnet</h3>
+
+                  </div>
+
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+               <div id="ho_co" class="guarantee-box_main">
+                  <div class="guarantee-box text_align_center">
+                     <i>
+                        <img src="static\images\dn.png" alt="Alternative Text" height="90" width="150" class="image4">
+                     </i>
+                     <h3>Densenet169</h3>
+
+                  </div>
+
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+               <div id="ho_co" class="guarantee-box_main">
+                  <div class="guarantee-box text_align_center">
+                     <i>
+                        <img src="static\images\mobile.png" alt="Alternative Text" height="170" width="170"
+                           class="image3">
+                     </i>
+                     <h3>Mobilenetv2</h3>
+
+                  </div>
+
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- end banner -->
+   <!-- domain -->
+   <div class="domain">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="titlepage text_align_center">
+                  <h2>all starts with <span class="blue_light">ML</span></h2>
+               </div>
+            </div>
+         </div>
+
+         <form method="POST" enctype="multipart/form-data">
+            <div>
+               <div> <input type="file" name="query_img" style="margin-left: 500px;"><br></div>
+
+               <label for="feature_select">Please select</label>
+               <div>
+                  <select class="form-select" aria-label="Default select example" name="feature_select"
+                     style="font-size: 19px; font-weight:200;">
+
+                     <option value="DenseNet">DenseNet</option>
+                     <option value="EfficientNet">EfficientNet</option>
+                     <option value="MobileNet">MobileNet</option>
+                     <option value="DenseEffNet">DenseEffNet</option>
+                  </select>
+               </div>
+            </div>
+            <br><br>
             <label for="scope">Define Scope</label>
-            <input type="number" id="scope" name="scope">
-            <input type="submit">
+            <input type="number" id="scope" name="scope" width="50%">
+            <br><br>
+            <div style="display: block; margin:auto;">
+               <input type="submit" value="Select" class="my-button" style=" display: block;margin: auto;">
+            </div>
 
-        </form>
-        <h2 style="text-align: center;">Query:</h2>
-        {% if query_path %}
-        <img src="{{ query_path }}" width="250px" style="margin-left: 15px;">
-        <span style="font: size 30px;"><b>Recall = {{recall}}</b></span>
-        <span style="font: size 30px;"><b> Precision = {{precision}}</b></span>
-        {% endif %}
+         </form>
 
-        <h2>Results:</h2>
-        {% for score in scores %}
-        <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
-            <img src="{{ score[1] }}" height="200px">
-            <figcaption>{{ score[0] }}</figcaption>
-            <span>{{score[1].stem}}</span>
+         <!-- end guarantee -->
+         <!-- order -->
+         <div class="order">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8 offset-md-2">
+                     <div class="titlepage text_align_center">
+                        <h2>Information about search <br> <span class="blue_light"></span></h2>
+
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-4">
+                     <div id="ho_co" class="order-box_main">
+                        <div class="order-box text_align_center">
+                           <h3 style="font-size: 23px;">PRECISION</h3>
+                           <div id="output-container">
+                              <!-- form output will appear here -->
+                              {{precision}}
+
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div id="ho_co" class="order-box_main">
+                        <div class="order-box text_align_center">
+                           <h3 style="font-size: 23px;">SPEED</h3>
+                           <div id="output-container">
+                              <!-- form output will appear here -->
+                              {{speed}}
+                           </div>
+
+                        </div>
+
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div id="ho_co" class="order-box_main">
+                        <div class="order-box text_align_center">
+                           <h3 style="font-size: 23px;">RECALL</h3>
+                           <div id="output-container">
+                              <!-- form output will appear here -->
+                              {{recall}}
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+         <!-- end order -->
+         <!-- about -->
+         <div class="about">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="titlepage text_align_center">
+                        <h2>Output<span class="blue_light"> images</span></h2>
+                        <h2 style="text-align: center;">Query:</h2>
+                        {% if query_path %}
+                        <img src="{{ query_path }}" width="250px" style="margin-left: 15px;">
+
+                        {% endif %}
+                        <div>
+                           <h2>Results:</h2>
+                           <div>
+                              {% for score in scores %}
+                              <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                                 <img src="{{ score[1] }}" height="200px">
+                                 <figcaption>{{ score[0] }}</figcaption>
+                                 <span>{{score[1].stem}}</span>
 
 
-        </figure>
-        {% endfor %}
-    </div>
+                              </figure>
+                              {% endfor %}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+         <!-- end about -->
+         <!-- contact -->
+
+         <!-- contact -->
+         <!--  footer -->
+         <footer>
+            <div class="footer">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="infoma text_align_left">
+                           <h3>Member</h3>
+                           <ul class="commodo">
+                              <li>Dipak Kawale</li>
+                              <li>Tejaswi Jadhav</li>
+                              <li>Prajakta Sangolkar</li>
+                              <li>Anjali Jha</li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="infoma">
+                           <h3>Contact Us</h3>
+                           <ul class="conta">
+                              <li><i class="fa fa-map-marker" aria-hidden="true"></i>Address : Loram
+                                 Ipusm
+                              </li>
+                              <li><i class="fa fa-phone" aria-hidden="true"></i>Call :+91 7039008629
+                              </li>
+                              <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="Javascript:void(0)"> Email
+                                    : Dipakkawale1720@gmail.com
+                                 </a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="infoma">
+                           <h3>AboutUs</h3>
+                           <p>We are a group of students working on a project for Content based image
+                              retrival. Our goal is to identify the similar image in given query with
+                              99%
+                              accuracy.</p>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="copyright">
+                  <div class="container">
+                     <div class="row">
+                        <div class="col-md-12">
+                           <p>© 2023 ADTP. All Rights Reserved. </p>
+
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+         <!-- end footer -->
+         <!-- Javascript files-->
+         <script src="static/js/jquery.min.js"></script>
+         <script src="static/js/bootstrap.bundle.min.js"></script>
+         <!-- sidebar -->
+         <script src="static/js/custom.js"></script>
+
 </body>
 
 </html>
