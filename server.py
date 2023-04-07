@@ -22,21 +22,26 @@ MobiDF=[]
 img_paths = []
 for feature_path in Path("./static/DenseNetFeatures").glob("*.npy"):
     DenseDF.append(np.load(feature_path))
-    img_paths.append(Path("./static/image") / (feature_path.stem + ".jpeg"))
+    # img_paths.append(Path("./static/image") / (feature_path.stem + ".jpeg"))
 DenseDF = np.array(DenseDF)
 
 for feature_path in Path("./static/EfficientNetFeatures").glob("*.npy"):
     EffiDF.append(np.load(feature_path))
-
+    # img_paths.append(Path("./static/image") / (feature_path.stem + ".jpeg"))
 EffiDF = np.array(EffiDF)
 
 for feature_path in Path("./static/DenseEffNetFeatures").glob("*.npy"):
     DenseEffDF.append(np.load(feature_path))
+    # img_paths.append(Path("./static/image") / (feature_path.stem + ".jpeg"))
 DenseEffDF = np.array(DenseEffDF)
 
 for feature_path in Path("./static/MobileNetFeatures").glob("*.npy"):
     MobiDF.append(np.load(feature_path))
+    # img_paths.append(Path("./static/image") / (feature_path.stem + ".jpeg"))
 MobiDF = np.array(MobiDF)
+
+for img in  Path("./static/image").glob("*.jpeg"):
+    img_paths.append(img)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -49,6 +54,7 @@ def index():
         img = Image.open(file.stream)  # PIL image
         uploaded_img_path = "static/uploaded/" + datetime.now().isoformat().replace(":", ".") + "_" + file.filename
         img.save(uploaded_img_path)
+        dists=0
         if FeatureModel=='DenseNet':
             query = DenseFeature.extract(img)
             dists = np.linalg.norm(DenseDF-query, axis=1)  # L2 distances to features
@@ -85,10 +91,10 @@ def index():
         speed = time()-start
         return render_template('index.html',
                                query_path=uploaded_img_path,speed=speed,
-                               scores=scores,precision=precision,recall=recall)
+                               scores=scores,mod=FeatureModel,precision=precision,recall=recall)
     else:
         return render_template('index.html')
 
 
 if __name__=="__main__":
-    app.run("0.0.0.0")
+    app.run("0.0.0.0",port=5002)

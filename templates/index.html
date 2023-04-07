@@ -64,7 +64,7 @@
          </div>
       </div>
    </div>
-   </div> <!-- end header inner -->
+   <!-- end header inner -->
    <!-- top -->
 
    <div class="full_bg">
@@ -248,8 +248,8 @@
                            <h3 style="font-size: 23px;">PRECISION</h3>
                            <div id="output-container">
                               <!-- form output will appear here -->
-                              {{precision}}
-
+                              <h4>{{precision}}</h4>
+                              <!-- {{mod}} -->
                            </div>
                         </div>
 
@@ -261,7 +261,7 @@
                            <h3 style="font-size: 23px;">SPEED</h3>
                            <div id="output-container">
                               <!-- form output will appear here -->
-                              {{speed}}
+                              <h4>{{speed}}</h4>
                            </div>
 
                         </div>
@@ -274,7 +274,7 @@
                            <h3 style="font-size: 23px;">RECALL</h3>
                            <div id="output-container">
                               <!-- form output will appear here -->
-                              {{recall}}
+                              <h4>{{recall}}</h4>
                            </div>
                         </div>
 
@@ -285,31 +285,27 @@
             </div>
          </div>
          <!-- end order -->
-         <!-- about -->
          <div class="about">
             <div class="container">
                <div class="row">
                   <div class="col-md-12">
                      <div class="titlepage text_align_center">
-                        <h2>Output<span class="blue_light"> images</span></h2>
-                        <h2 style="text-align: center;">Query:</h2>
+                        <!-- <h2>Output<span class="blue_light"> images</span></h2> -->
+                        <h2 style="text-align: center;">Query Image:</h2>
                         {% if query_path %}
-                        <img src="{{ query_path }}" width="250px" style="margin-left: 15px;">
+                        <!-- <img src="{{ query_path }}" width="250px" style="margin-left: 15px;"> -->
+                        <div class="card col-sm-2 px-2  mx-auto my-5">
+                           <img class="card-img-top " src="{{ query_path }}" alt="Card image cap">
+                           <div class="card-body">
+                              <h3 class="card-title"></h3>
 
+                           </div>
+
+                        </div>
                         {% endif %}
                         <div>
                            <h2>Results:</h2>
-                           <div>
-                              {% for score in scores %}
-                              <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
-                                 <img src="{{ score[1] }}" height="200px">
-                                 <figcaption>{{ score[0] }}</figcaption>
-                                 <span>{{score[1].stem}}</span>
 
-
-                              </figure>
-                              {% endfor %}
-                           </div>
                         </div>
                      </div>
                   </div>
@@ -317,71 +313,93 @@
                </div>
             </div>
          </div>
-         <!-- end about -->
-         <!-- contact -->
+         <!-- about -->
+         <div class="results" id="output-container">
+            <div class="container">
 
-         <!-- contact -->
-         <!--  footer -->
-         <footer>
-            <div class="footer">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="infoma text_align_left">
-                           <h3>Member</h3>
-                           <ul class="commodo">
-                              <li>Dipak Kawale</li>
-                              <li>Tejaswi Jadhav</li>
-                              <li>Prajakta Sangolkar</li>
-                              <li>Anjali Jha</li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="infoma">
-                           <h3>Contact Us</h3>
-                           <ul class="conta">
-                              <li><i class="fa fa-map-marker" aria-hidden="true"></i>Address : Loram
-                                 Ipusm
-                              </li>
-                              <li><i class="fa fa-phone" aria-hidden="true"></i>Call :+91 7039008629
-                              </li>
-                              <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="Javascript:void(0)"> Email
-                                    : Dipakkawale1720@gmail.com
-                                 </a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="infoma">
-                           <h3>AboutUs</h3>
-                           <p>We are a group of students working on a project for Content based image
-                              retrival. Our goal is to identify the similar image in given query with
-                              99%
-                              accuracy.</p>
-                        </div>
+               <div class="row mx-auto ">
+                  {% for score in scores %}
+                  <div class="card col-sm-2 mx-3 my-2">
+                     <img class="card-img-top  " src="{{ score[1] }}" alt="Card image cap">
+                     <div class="card-body">
+                        <h3 class="card-title">{{score[1].stem}}</h3>
+
                      </div>
 
                   </div>
+                  {%endfor%}
                </div>
-               <div class="copyright">
-                  <div class="container">
-                     <div class="row">
-                        <div class="col-md-12">
-                           <p>© 2023 ADTP. All Rights Reserved. </p>
+            </div>
+         </div>
+      </div>
 
-                        </div>
+
+      <!-- end about -->
+      <!-- contact -->
+
+      <!-- contact -->
+      <!--  footer -->
+      <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="infoma text_align_left">
+                        <h3>Member</h3>
+                        <ul class="commodo">
+                           <li>Dipak Kawale</li>
+                           <li>Tejaswi Jadhav</li>
+                           <li>Prajakta Sangolkar</li>
+                           <li>Anjali Jha</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 col-sm-6">
+                     <div class="infoma">
+                        <h3>Contact Us</h3>
+                        <ul class="conta">
+                           <li><i class="fa fa-map-marker" aria-hidden="true"></i>Address : Loram
+                              Ipusm
+                           </li>
+                           <li><i class="fa fa-phone" aria-hidden="true"></i>Call :+91 7039008629
+                           </li>
+                           <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="Javascript:void(0)">
+                                 Email
+                                 : Dipakkawale1720@gmail.com
+                              </a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="infoma">
+                        <h3>AboutUs</h3>
+                        <p>We are a group of students working on a project for Content based image
+                           retrival. Our goal is to identify the similar image in given query with
+                           99%
+                           accuracy.</p>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2023 ADTP. All Rights Reserved. </p>
+
                      </div>
                   </div>
                </div>
             </div>
-         </footer>
-         <!-- end footer -->
-         <!-- Javascript files-->
-         <script src="static/js/jquery.min.js"></script>
-         <script src="static/js/bootstrap.bundle.min.js"></script>
-         <!-- sidebar -->
-         <script src="static/js/custom.js"></script>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="static/js/jquery.min.js"></script>
+      <script src="static/js/bootstrap.bundle.min.js"></script>
+      <!-- sidebar -->
+      <script src="static/js/custom.js"></script>
 
 </body>
 
