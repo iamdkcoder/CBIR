@@ -3,6 +3,8 @@ from PIL import Image
 from DensenetMod import FeatureExtractorD
 from EfficientNetMod import FeatureExtractorE
 from MobileNetMod import FeatureExtractorM
+from ConvNextmod import extract_features
+from convNextKerasmod import FeatureExtractorConv
 from datetime import datetime
 from flask import Flask, request, render_template
 from pathlib import Path
@@ -15,11 +17,22 @@ app = Flask(__name__)
 DenseFeature = FeatureExtractorD()
 EfficientFeature = FeatureExtractorE()
 MobileFeature = FeatureExtractorM()
+ConvKerasFeature = FeatureExtractorConv()
 DenseDF = []
 EffiDF=[]
 DenseEffDF=[]
 MobiDF=[]
+convDF=[]
+convKerasDF=[]
 img_paths = []
+for feature_path in Path("./static/convNet").glob("*.npy"):
+    convDF.append(np.load(feature_path))
+convDF = np.array(convDF)
+
+for feature_path in Path("./static/convNetKeras").glob("*.npy"):
+    convKerasDF.append(np.load(feature_path))
+convKerasDF = np.array(convKerasDF)
+
 for feature_path in Path("./static/DenseNetFeatures").glob("*.npy"):
     DenseDF.append(np.load(feature_path))
     # img_paths.append(Path("./static/image") / (feature_path.stem + ".jpeg"))
@@ -69,7 +82,12 @@ def index():
             queryB=EfficientFeature.extract(img)
             query=np.concatenate((queryA,queryB))
             dists = np.linalg.norm(np.subtract(DenseEffDF,query), axis=1)  # L2 distances to features
-
+        elif FeatureModel=='ConvNext':
+            query=extract_features(img)
+            dists = np.linalg.norm(convDF-query, axis=1)  # L2 distances to features     
+        elif FeatureModel=='ConvNextKeras':
+            query=ConvKerasFeature.extract(img)
+            dists = np.linalg.norm(convKerasDF-query, axis=1)  # L2 distances to features     
         # Run search
         scope=int(scope)
         ids = np.argsort(dists)[1:scope+1]  # Top 10 results
